@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './CollectionItem.styles.scss';
 
 const CollectionItem = ({

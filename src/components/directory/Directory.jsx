@@ -1,5 +1,7 @@
 import React from 'react';
+
 import MenuItem from '../menu-item/MenuItem';
+
 import SECTIONS_DATA from './sections.data';
 import './Directory.styles.scss';
 
