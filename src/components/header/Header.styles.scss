@@ -6,7 +6,9 @@
   margin-bottom: 25px;
 
   .logo-container {
-    width: 70px;
+    display: flex;
+    align-items: center;
+    width: 100px;
     height: 100%;
     padding: 25px;
   }
@@ -20,6 +22,7 @@
 
     .option {
       padding: 10px 15px;
+      cursor: pointer;
     }
   }
 }
