@@ -1,4 +1,7 @@
 .custom-button {
+  display: flex;
+  justify-content: center;
+
   min-width: 165px;
   width: auto;
   height: 50px;
@@ -34,8 +37,20 @@
 
     &:hover,
     &:focus {
-      border: none;
       background-color: #357ae8;
+      border: none;
+    }
+  }
+
+  &.inverted {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+
+    &:hover {
+      color: #fff;
+      background-color: #000;
+      border: none;
     }
   }
 }
