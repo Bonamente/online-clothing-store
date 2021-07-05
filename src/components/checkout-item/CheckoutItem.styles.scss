@@ -26,7 +26,23 @@
   }
 
   .quantity {
-    padding-left: 20px;
+    display: flex;
+
+    .decrease-button,
+    .increase-button {
+      width: 15px;
+      height: 25px;
+      padding: 0;
+
+      border: none;
+      background: none;
+
+      cursor: pointer;
+    }
+
+    .value {
+      margin: 0 5px;
+    }
   }
 
   .remove-button {
