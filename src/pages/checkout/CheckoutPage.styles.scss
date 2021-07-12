@@ -32,4 +32,17 @@
 
     font-size: 36px;
   }
+
+  .test-warning {
+    margin-top: 40px;
+
+    font-size: 24px;
+    text-align: center;
+    color: #ff0000;
+  }
+
+  .test-warning ~ button {
+    margin-top: 40px;
+    margin-left: auto;
+  }
 }
