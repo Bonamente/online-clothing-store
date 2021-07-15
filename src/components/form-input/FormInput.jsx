@@ -1,27 +1,24 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-import './FormInput.styles.scss';
+import { GroupContainer, FormInputContainer, FormInputLabel } from './FormInput.styles';
 
 const FormInput = ({ handleChange, label, ...otherProps }) => (
-  <div className="group">
-    <input
+  <GroupContainer>
+    <FormInputContainer
       id={`form-input-${label}`}
-      // id="form-input"
-      className="form-input"
       onChange={handleChange}
-      // eslint-disable-next-line react/jsx-props-no-spreading
       {...otherProps}
     />
     {label && (
-      <label
+      <FormInputLabel
         htmlFor={`form-input-${label}`}
-        // htmlFor="form-input"
-        className={`${(otherProps.value.length > 0) ? 'shrink' : ''} form-input-label`}
+        className={`${(otherProps.value.length > 0) ? 'shrink' : ''}`}
       >
         {label}
-      </label>
+      </FormInputLabel>
     )}
-  </div>
+  </GroupContainer>
 );
 
 export default FormInput;
