@@ -8,14 +8,14 @@ import CollectionPageContainer from '../collection/CollectionPageContainer';
 import * as actions from '../../redux/shop/shop.actions';
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchCollectionsStartAsync: () => dispatch(actions.fetchCollectionsStartAsync()),
+  fetchCollectionsStart: () => dispatch(actions.fetchCollectionsStart()),
 });
 
 class ShopPage extends React.Component {
   componentDidMount() {
-    const { fetchCollectionsStartAsync } = this.props;
+    const { fetchCollectionsStart } = this.props;
 
-    fetchCollectionsStartAsync();
+    fetchCollectionsStart();
   }
 
   render() {
