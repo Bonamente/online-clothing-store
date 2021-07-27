@@ -37,7 +37,8 @@ class SignIn extends React.Component {
   };
 
   render() {
-    const { email, password, googleSignInStart } = this.state;
+    const { googleSignInStart } = this.props;
+    const { email, password } = this.state;
 
     return (
       <SignInContainer>
