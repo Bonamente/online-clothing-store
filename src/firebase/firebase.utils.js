@@ -1,6 +1,6 @@
 /* eslint-disable no-return-await */
 /* eslint-disable consistent-return */
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 
@@ -76,5 +76,14 @@ export const convertCollectionsSnapshotToMap = (collections) => {
     return acc;
   }, {});
 };
+
+export const getCurrentUser = () => (
+  new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+      unsubscribe();
+      resolve(userAuth);
+    }, reject);
+  })
+);
 
 export default firebase;
