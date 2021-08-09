@@ -15,9 +15,24 @@ export const CollectionItemContainer = styled.div`
     .image {
       opacity: 0.8;
     }
+
     button {
       display: flex;
       opacity: 0.85;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 40vw;
+
+    &:hover {
+      .image {
+        opacity: unset;
+      }
+
+      button {
+        opacity: unset;
+      }
     }
   }
 `;
@@ -27,10 +42,19 @@ export const AddButton = styled(CustomButton)`
   top: 255px;
 
   display: none;
-
   width: 80%;
 
   opacity: 0.7;
+
+  @media screen and (max-width: 800px) {
+    top: 235px;
+
+    display: block;
+    min-width: unset;
+    padding: 0 10px;
+
+    opacity: 0.9;
+  }
 `;
 
 export const BackgroundImage = styled.div`
@@ -42,6 +66,10 @@ export const BackgroundImage = styled.div`
   background-position: center;
 
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+
+  @media screen and (max-width: 800px) {
+    height: 85%;
+  }
 `;
 
 export const CollectionFooterContainer = styled.div`
@@ -52,14 +80,24 @@ export const CollectionFooterContainer = styled.div`
   height: 5%;
 
   font-size: 18px;
+
+  @media screen and (max-width: 800px) {
+    height: 15%;
+  }
 `;
 
 export const NameContainer = styled.span`
-  width: 90%;
   margin-bottom: 15px;
+
+  /* @media screen and (max-width: 800px) {
+    width: unset;
+  } */
 `;
 
 export const PriceContainer = styled.span`
-  width: 10%;
   text-align: right;
+
+  /* @media screen and (max-width: 800px) {
+    width: unset;
+  } */
 `;

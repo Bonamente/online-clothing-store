@@ -5,6 +5,16 @@ export const SignUpContainer = styled.div`
   flex-direction: column;
 
   width: 380px;
+
+  @media screen and (max-width: 800px) {
+    align-items: center;
+
+    width: unset;
+
+    button[type='submit'] {
+      margin: auto;
+    }
+  }
 `;
 
 export const SignUpTitle = styled.h2`
