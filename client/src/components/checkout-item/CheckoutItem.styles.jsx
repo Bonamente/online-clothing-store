@@ -40,8 +40,23 @@ export const TextForScreenReader = styled.span`
   clip: rect(0, 0, 0, 0);
 `;
 
+export const NameContainer = styled.h2`
+  margin: 0;
+  width: 23%;
+
+  font-size: 20px;
+
+  @media screen and (max-width: 800px) {
+    font-size: 16px;
+  }
+`;
+
 export const TextContainer = styled.span`
   width: 23%;
+
+  @media screen and (max-width: 800px) {
+    font-size: 16px;
+  }
 `;
 
 export const QuantityContainer = styled(TextContainer)`
@@ -61,6 +76,11 @@ export const QuantityControlButtonContainer = styled.button`
   background: none;
 
   cursor: pointer;
+
+  @media screen and (max-width: 800px) {
+    width: 10px;
+    height: 20px;
+  }
 `;
 
 export const RemoveButtonContainer = styled.button`

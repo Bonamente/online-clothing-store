@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const CollectionPreviewContainer = styled.div`
   display: flex;
@@ -10,14 +11,25 @@ export const CollectionPreviewContainer = styled.div`
   }
 `;
 
-export const TitleContainer = styled.h1`
+export const LinkContainer = styled(Link)`
+  align-self: flex-start;
+
   margin-bottom: 25px;
-  font-size: 28px;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: grey;
   }
+
+  @media screen and (max-width: 800px) {
+    align-self: center;
+  }
+`;
+
+export const TitleContainer = styled.h2`
+  margin: 0;
+  font-size: 28px;
 `;
 
 export const PreviewContainer = styled.div`

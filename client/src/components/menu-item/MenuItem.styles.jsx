@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const MenuItemContainer = styled.div`
+export const MenuItemContainer = styled(Link)`
   display: flex;
   flex: 1 1 auto;
   align-items: center;
@@ -14,6 +15,7 @@ export const MenuItemContainer = styled.div`
 
   overflow: hidden;
 
+  &:focus,
   &:hover {
     cursor: pointer;
     & .background-image {
@@ -64,7 +66,8 @@ export const ContentContainer = styled.div`
   opacity: 0.7;
 `;
 
-export const ContentTitle = styled.span`
+export const ContentTitle = styled.h3`
+  margin: 0;
   margin-bottom: 6px;
 
   font-weight: bold;
@@ -72,7 +75,9 @@ export const ContentTitle = styled.span`
   color: #4a4a4a;
 `;
 
-export const ContentSubtitle = styled.span`
+export const ContentSubtitle = styled.p`
+  margin: 0;
+
   font-weight: lighter;
   font-size: 16px;
 `;

@@ -11,7 +11,10 @@ export const CollectionItemContainer = styled.div`
   width: 22vw;
   height: 350px;
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:focus-within {
+    outline: none;
     .image {
       opacity: 0.8;
     }
@@ -25,7 +28,8 @@ export const CollectionItemContainer = styled.div`
   @media screen and (max-width: 800px) {
     width: 40vw;
 
-    &:hover {
+    &:hover,
+    &:focus {
       .image {
         opacity: unset;
       }
@@ -57,15 +61,12 @@ export const AddButton = styled(CustomButton)`
   }
 `;
 
-export const BackgroundImage = styled.div`
+export const ItemImage = styled.img`
   width: 100%;
   height: 95%;
   margin-bottom: 5px;
 
-  background-size: cover;
-  background-position: center;
-
-  background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+  object-fit: cover;
 
   @media screen and (max-width: 800px) {
     height: 85%;
@@ -79,25 +80,22 @@ export const CollectionFooterContainer = styled.div`
   width: 100%;
   height: 5%;
 
-  font-size: 18px;
-
   @media screen and (max-width: 800px) {
     height: 15%;
   }
 `;
 
-export const NameContainer = styled.span`
+export const NameContainer = styled.h3`
+  margin: 0;
   margin-bottom: 15px;
 
-  /* @media screen and (max-width: 800px) {
-    width: unset;
-  } */
+  font-size: 18px;
 `;
 
-export const PriceContainer = styled.span`
+export const PriceContainer = styled.p`
+  margin: 0;
   text-align: right;
 
-  /* @media screen and (max-width: 800px) {
-    width: unset;
-  } */
+  font-size: 18px;
+  font-weight: bold;
 `;

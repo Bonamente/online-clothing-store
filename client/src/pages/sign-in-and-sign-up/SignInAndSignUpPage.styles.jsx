@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SignInAndSignUpContainer = styled.div`
+export const SignInAndSignUpContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 850px;
@@ -11,11 +11,26 @@ const SignInAndSignUpContainer = styled.div`
     align-items: center;
 
     width: unset;
-    /* padding: 0 10px; */
 
     > *:first-child {
       margin-bottom: 50px;
     }
   }
 `;
-export default SignInAndSignUpContainer;
+
+export const TextForScreenReader = styled.h1`
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border-width: 0;
+
+  clip: rect(0, 0, 0, 0);
+`;

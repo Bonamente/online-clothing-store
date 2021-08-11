@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -28,7 +28,7 @@ export const LogoContainer = styled(Link)`
   }
 `;
 
-export const OptionsContainer = styled.div`
+export const OptionsContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -43,4 +43,21 @@ export const OptionsContainer = styled.div`
 export const OptionLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
+`;
+
+export const TextForScreenReader = styled.span`
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border-width: 0;
+
+  clip: rect(0, 0, 0, 0);
 `;

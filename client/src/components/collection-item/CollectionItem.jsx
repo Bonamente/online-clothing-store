@@ -5,7 +5,7 @@ import * as actions from '../../redux/cart/cart.actions';
 
 import {
   CollectionItemContainer,
-  BackgroundImage,
+  ItemImage,
   CollectionFooterContainer,
   NameContainer,
   PriceContainer,
@@ -20,13 +20,13 @@ const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
 
   return (
-    <CollectionItemContainer>
-      <BackgroundImage className="image" imageUrl={imageUrl} />
+    <CollectionItemContainer tabIndex={0}>
+      <ItemImage className="image" src={imageUrl} alt={name} />
       <CollectionFooterContainer>
         <NameContainer>{name}</NameContainer>
         <PriceContainer>{`$${price}`}</PriceContainer>
       </CollectionFooterContainer>
-      <AddButton onClick={() => addItem(item)} inverted>Add to cart</AddButton>
+      <AddButton onClick={() => addItem(item)} inverted tabIndex={0}>Add to cart</AddButton>
     </CollectionItemContainer>
   );
 };

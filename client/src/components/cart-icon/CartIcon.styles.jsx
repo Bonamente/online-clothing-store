@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { ReactComponent as ShoppingIconSVG } from '../../assets/shopping-bag.svg';
 
-export const CartIconContainer = styled.div`
+export const CartIconContainer = styled.button`
   position: relative;
 
   display: flex;
@@ -11,6 +11,9 @@ export const CartIconContainer = styled.div`
 
   width: 45px;
   height: 45px;
+
+  border: none;
+  background-color: unset;
 
   cursor: pointer;
 `;
@@ -26,4 +29,21 @@ export const ItemCountContainer = styled.span`
 
     font-size: 10px;
     font-weight: bold;
+`;
+
+export const TextForScreenReader = styled.span`
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border-width: 0;
+
+  clip: rect(0, 0, 0, 0);
 `;

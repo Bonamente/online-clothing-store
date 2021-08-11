@@ -6,7 +6,14 @@ import FormInput from '../form-input/FormInput';
 
 import * as actions from '../../redux/user/user.actions';
 
-import { SignInContainer, SignInTitle, ButtonsBarContainer } from './SignIn.styles';
+import {
+  SignInContainer,
+  SignInTitle,
+  ButtonsBarContainer,
+  FieldsetContainer,
+  LegendContainer,
+  InnerContainer,
+} from './SignIn.styles';
 
 const mapDispatchToProps = (dispatch) => ({
   googleSignInStart: () => dispatch(actions.googleSignInStart()),
@@ -35,32 +42,39 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
       <span>Sign in with your email and password</span>
 
       <form onSubmit={handleSubmit}>
-        <FormInput
-          name="email"
-          type="email"
-          value={email}
-          label="email"
-          handleChange={handleChange}
-          required
-        />
-        <FormInput
-          name="password"
-          type="password"
-          value={password}
-          label="password"
-          handleChange={handleChange}
-          required
-        />
-        <ButtonsBarContainer>
-          <CustomButton type="submit">Sign in</CustomButton>
-          <CustomButton
-            type="button"
-            onClick={googleSignInStart}
-            isGoogleSignIn
-          >
-            Sign in with Google
-          </CustomButton>
-        </ButtonsBarContainer>
+        <FieldsetContainer>
+          <InnerContainer>
+            <LegendContainer>
+              Sign in with your email and password or just hit the "Sign in with Google" button to sign in using your Google account.
+            </LegendContainer>
+            <FormInput
+              name="email"
+              type="email"
+              value={email}
+              label="email"
+              handleChange={handleChange}
+              required
+            />
+            <FormInput
+              name="password"
+              type="password"
+              value={password}
+              label="password"
+              handleChange={handleChange}
+              required
+            />
+            <ButtonsBarContainer>
+              <CustomButton type="submit">Sign in</CustomButton>
+              <CustomButton
+                type="button"
+                onClick={googleSignInStart}
+                isGoogleSignIn
+              >
+                Sign in with Google
+              </CustomButton>
+            </ButtonsBarContainer>
+          </InnerContainer>
+        </FieldsetContainer>
       </form>
     </SignInContainer>
   );

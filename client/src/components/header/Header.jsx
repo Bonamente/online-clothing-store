@@ -11,7 +11,13 @@ import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
 import * as actions from '../../redux/user/user.actions';
 
-import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from './Header.styles';
+import {
+  HeaderContainer,
+  LogoContainer,
+  OptionsContainer,
+  OptionLink,
+  TextForScreenReader,
+} from './Header.styles';
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
@@ -25,14 +31,15 @@ const mapDispatchToProps = (dispatch) => ({
 const Header = ({ currentUser, hidden, signOutStart }) => (
   <HeaderContainer>
     <LogoContainer to="/">
-      <Logo className="logo" />
+      <TextForScreenReader>to homepage</TextForScreenReader>
+      <Logo className="logo" aria-hidden="true" />
     </LogoContainer>
     <OptionsContainer>
       <OptionLink to="/shop">SHOP</OptionLink>
       <OptionLink to="/contact">CONTACT</OptionLink>
       {
         currentUser
-          ? <OptionLink as="div" onClick={signOutStart}>SIGN OUT</OptionLink>
+          ? <OptionLink onClick={signOutStart}>SIGN OUT</OptionLink>
           : <OptionLink to="/signin">SIGN IN</OptionLink>
       }
       <CartIcon />

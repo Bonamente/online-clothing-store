@@ -12,6 +12,7 @@ import {
   CheckoutHeaderContainer,
   HeaderBlockContainer,
   TotalContainer,
+  TextForScreenReader,
   WarningContainer,
 } from './CheckoutPage.styless';
 
@@ -22,26 +23,27 @@ const mapStateToProps = createStructuredSelector({
 
 const CheckoutPage = ({ cartItems, total }) => (
   <CheckoutPageContainer>
+    <TextForScreenReader>Сheckout page</TextForScreenReader>
     <CheckoutHeaderContainer>
       <HeaderBlockContainer>
-        <span>Product</span>
+        <span aria-hidden="true">Product</span>
       </HeaderBlockContainer>
       <HeaderBlockContainer>
-        <span>Description</span>
+        <span aria-hidden="true">Description</span>
       </HeaderBlockContainer>
       <HeaderBlockContainer>
-        <span>Quantity</span>
+        <span aria-hidden="true">Quantity</span>
       </HeaderBlockContainer>
       <HeaderBlockContainer>
-        <span>Price</span>
+        <span aria-hidden="true">Price</span>
       </HeaderBlockContainer>
       <HeaderBlockContainer>
-        <span>Remove</span>
+        <span aria-hidden="true">Remove</span>
       </HeaderBlockContainer>
     </CheckoutHeaderContainer>
     {cartItems.map((cartItem) => <CheckoutItem key={cartItem.id} cartItem={cartItem} />)}
     <TotalContainer>
-      <span>{`TOTAL: ${total}`}</span>
+      <span>{`TOTAL: $${total}`}</span>
     </TotalContainer>
     <WarningContainer className="test-warning">
       *Please use the following test credit card for payments*

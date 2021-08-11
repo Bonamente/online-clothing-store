@@ -12,7 +12,7 @@ const buttonStyles = css`
   }
 
   &:focus {
-    color: black;
+    color: #000;
     background-color: #fff;
   }
 `;
@@ -34,7 +34,8 @@ const invertedButtonStyles = css`
   background-color: #fff;
   border: 1px solid #000;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: #fff;
     background-color: #000;
     border: none;

@@ -7,7 +7,13 @@ import CustomButton from '../custom-button/CustomButton';
 
 import * as actions from '../../redux/user/user.actions';
 
-import { SignUpContainer, SignUpTitle } from './SignUp.styles';
+import {
+  SignUpContainer,
+  SignUpTitle,
+  FieldsetContainer,
+  LegendContainer,
+  InnerContainer,
+ } from './SignUp.styles';
 
 const mapDispatchToProps = (dispatch) => ({
   signUpStart: (userCredentials) => dispatch(actions.signUpStart(userCredentials)),
@@ -49,39 +55,46 @@ const SignUp = ({ signUpStart }) => {
       <SignUpTitle>I do not have an account</SignUpTitle>
       <span>Sign up with your email and password</span>
       <form className="sign-up-form" onSubmit={handleSubmit}>
-        <FormInput
-          name="displayName"
-          type="text"
-          value={displayName}
-          label="Display Name"
-          handleChange={handleChange}
-          required
-        />
-        <FormInput
-          name="email"
-          type="email"
-          value={email}
-          label="Email"
-          handleChange={handleChange}
-          required
-        />
-        <FormInput
-          name="password"
-          type="password"
-          value={password}
-          label="Password"
-          handleChange={handleChange}
-          required
-        />
-        <FormInput
-          name="confirmPassword"
-          type="password"
-          value={confirmPassword}
-          label="Confirm Password"
-          handleChange={handleChange}
-          required
-        />
-        <CustomButton type="submit">SIGN UP</CustomButton>
+        <FieldsetContainer>
+          <InnerContainer>
+            <LegendContainer>
+              Using this form you can sign up with your email and password.
+            </LegendContainer>
+            <FormInput
+              name="displayName"
+              type="text"
+              value={displayName}
+              label="Display Name"
+              handleChange={handleChange}
+              required
+            />
+            <FormInput
+              name="email"
+              type="email"
+              value={email}
+              label="Email"
+              handleChange={handleChange}
+              required
+            />
+            <FormInput
+              name="password"
+              type="password"
+              value={password}
+              label="Password"
+              handleChange={handleChange}
+              required
+            />
+            <FormInput
+              name="confirmPassword"
+              type="password"
+              value={confirmPassword}
+              label="Confirm Password"
+              handleChange={handleChange}
+              required
+            />
+            <CustomButton type="submit">SIGN UP</CustomButton>
+          </InnerContainer>
+        </FieldsetContainer>
       </form>
     </SignUpContainer>
   );

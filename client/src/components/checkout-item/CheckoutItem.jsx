@@ -1,4 +1,3 @@
-/* eslint-disable object-curly-newline */
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -7,6 +6,7 @@ import * as actions from '../../redux/cart/cart.actions';
 import {
   CheckoutItemContainer,
   ImageContainer,
+  NameContainer,
   TextForScreenReader,
   TextContainer,
   QuantityContainer,
@@ -24,30 +24,33 @@ const CheckoutItem = ({ cartItem, addItem, removeItem, clearItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
 
   return (
-    <CheckoutItemContainer>
+    <CheckoutItemContainer tabIndex={0}>
       <ImageContainer>
         <img src={imageUrl} alt={name} />
       </ImageContainer>
-      <TextContainer>{name}</TextContainer>
+      <NameContainer>{name}</NameContainer>
       <QuantityContainer>
         <QuantityControlButtonContainer type="button" onClick={() => removeItem(cartItem)}>
           <TextForScreenReader>
-            decrease the quantity of this product in your cart
+            {`decrease the quantity of ${name} in your cart`}
           </TextForScreenReader>
           &#10094;
         </QuantityControlButtonContainer>
         <span>{quantity}</span>
         <QuantityControlButtonContainer type="button" onClick={() => addItem(cartItem)}>
           <TextForScreenReader>
-            increase the quantity of this product in your cart
+            {`increase the quantity of ${name} in your cart`}
           </TextForScreenReader>
           &#10095;
         </QuantityControlButtonContainer>
       </QuantityContainer>
-      <TextContainer>{price}</TextContainer>
+      <TextContainer>
+        <TextForScreenReader>{`the price of ${name} is`}</TextForScreenReader>
+        {`$${price}`}
+      </TextContainer>
       <RemoveButtonContainer type="button" onClick={() => clearItem(cartItem)}>
         <TextForScreenReader>
-          remove this product from your cart
+          {`remove ${name} from your cart`}
         </TextForScreenReader>
         &#10005;
       </RemoveButtonContainer>
