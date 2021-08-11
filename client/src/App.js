@@ -8,6 +8,7 @@ import { GlobalStyle } from './global.styles';
 import Header from './components/header/Header';
 import HomePage from './pages/homepage/HomePage';
 import ShopPage from './pages/shop/ShopPage';
+import ContactPage from './pages/contact/ContactPage';
 import CheckoutPage from './pages/checkout/CheckoutPage';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/SignInAndSignUpPage';
 
@@ -34,6 +35,7 @@ const App = ({ checkUserSession, currentUser }) => {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/shop" component={ShopPage} />
+        <Route exact path="/contact" component={ContactPage} />
         <Route exact path="/checkout" component={CheckoutPage} />
         <Route
           exact
