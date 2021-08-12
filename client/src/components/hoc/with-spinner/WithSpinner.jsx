@@ -1,20 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
-import { SpinnerOverlay, SpinnerContainer } from './WithSpinner.styles';
+import Spinner from '../../spinner/Spinner';
 
-const WithSpinner = (WrappedComponent) => {
-  const Spinner = ({ isLoading, ...otherProps }) => (
-    isLoading ? (
-      <SpinnerOverlay>
-        <SpinnerContainer />
-      </SpinnerOverlay>
-    ) : (
-      <WrappedComponent {...otherProps} />
-    )
-  );
-
-  return Spinner;
-};
+const WithSpinner = (WrappedComponent) => ({ isLoading, ...otherProps }) => (
+  isLoading ? <Spinner /> : <WrappedComponent {...otherProps} />
+);
 
 export default WithSpinner;

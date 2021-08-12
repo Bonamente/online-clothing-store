@@ -20,7 +20,7 @@ const MenuItem = ({
   const handleClick = () => history.push(`${match.url}${linkUrl}`);
 
   return (
-    <MenuItemContainer size={size} onClick={handleClick}>
+    <MenuItemContainer to="#" size={size} onClick={handleClick}>
       <BackgroundImageContainer className="background-image" imageUrl={imageUrl} />
       <ContentContainer>
         <ContentTitle>{title.toUpperCase()}</ContentTitle>
